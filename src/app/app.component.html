@@ -1,0 +1,16 @@
+<table *ngIf=" dataList.length > 0">
+  <thead>
+    <tr>
+      <th *ngFor="let key of getKeys(dataList[0])">{{ key }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of dataList">
+      <td *ngFor="let key of getKeys(item)">{{ item[key] }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf=" dataList.length === 0" class="no-data">
+  No data found.
+</div>
